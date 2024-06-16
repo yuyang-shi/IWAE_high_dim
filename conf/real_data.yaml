@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - vae
+
+# weight plotting
+weight_samples: 1000000
+datapoints: 1

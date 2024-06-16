@@ -1,0 +1,41 @@
+weight_samples: 1000000
+datapoints: 1
+name: ${dataset_name}
+run: 0
+seed: 0
+nosave: false
+logger: Wandb
+checkpoint_dir: null
+checkpoint_path: null
+loss_name: vr_iwae_loss_v2
+alpha: 0
+optimizer: Adam
+lr: 0.001
+max_epochs: 1000
+check_val_every_n_epoch: 10
+checkpoint_every_n_epochs: 10
+batch_size: 100
+test_batch_size: 10
+'N': 100
+test_N: 5000
+latent_dim: 50
+model:
+  network_type: MLP
+  net_dims:
+  - 200
+  - 200
+  distribution_type: Bernoulli
+  nonlinearity: tanh
+paths:
+  experiments_dir_name: experiments
+  data_dir_name: data
+dataset_name: mnist
+obs_dim:
+- 784
+data:
+  type: image
+  image_size: 28
+  channels: 1
+  train_len: 50000
+  valid_len: 10000
+  test_len: 10000

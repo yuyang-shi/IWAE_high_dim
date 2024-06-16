@@ -1,0 +1,12 @@
+# @package _global_
+
+# data
+dataset_name: mnist
+obs_dim: [784]
+data:
+  type: image
+  image_size: 28
+  channels: 1
+  train_len: 50000
+  valid_len: 10000
+  test_len: 10000

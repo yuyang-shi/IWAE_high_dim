@@ -1,0 +1,33 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - launcher: slurm_cpu
+  - job
+  - override hydra/launcher: submitit_slurm
+
+name: ${dataset_name}
+run: 0
+seed: null
+nosave: False
+
+# data
+dataset_name: linear_gaussian
+dim: 1000
+perturb_sig: 0.01
+
+# weight plotting
+weight_samples: 1000000
+datapoints: 1
+
+# training
+loss_name: vr_iwae_loss_v2  # vr_iwae_dreg_loss_v6
+alpha: 0
+optimizer: SGD
+lr: 1e-3
+max_epochs: 6000
+N: 100
+
+paths:
+  experiments_dir_name: experiments
+  data_dir_name: data

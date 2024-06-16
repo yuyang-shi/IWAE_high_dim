@@ -1,0 +1,27 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - launcher: slurm_cpu
+  - job
+  - override hydra/launcher: submitit_slurm
+
+name: ${dataset_name}
+run: 0
+seed: null
+nosave: False
+
+# data
+dim: 100
+alpha: 0.
+dataset_name: log_normal_gaussian
+
+# training
+loss: 1 #2
+optimizer: SGD
+lr: 1e-3
+max_epochs: 1000
+N: 100
+
+paths:
+  experiments_dir_name: experiments
